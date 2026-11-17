@@ -1,0 +1,23 @@
+# 运行期生成的数据（含账号、会话序号、日志），不要提交
+config/
+store/
+logs/
+runtime/
+
+# 打包产物
+build/
+dist/
+*.spec
+_exetest/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 其他
+*.log
+.DS_Store
+Thumbs.db

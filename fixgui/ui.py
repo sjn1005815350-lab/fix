@@ -14,6 +14,7 @@ from . import config_store, messaging, models, parser
 from .config_store import APP_ROOT, OPTION_GROUPS, PROFILE_FIELDS
 from .dictionary import get_dictionary
 from .engine import EngineError, FixEngine
+from .version import version_text
 from .messaging import _FULLWIDTH_TABLE
 
 FONT = ("Microsoft YaHei UI", 9)
@@ -87,7 +88,7 @@ class FixOrderApp(tk.Tk):
         self._connected_buttons = []
         self._state = "idle"
 
-        self.title("FIX 下单助手 —— 可视化下单 / 撤单 / 查询")
+        self.title("FIX 下单助手 %s —— 可视化下单 / 撤单 / 查询" % version_text())
         self.configure(bg=COLOR_BG)
         self.minsize(1180, 760)
         icon = APP_ROOT / "assets" / "app.ico"
@@ -1983,7 +1984,7 @@ class FixOrderApp(tk.Tk):
     def show_about(self):
         messagebox.showinfo(
             "关于",
-            "FIX 下单助手\n\n"
+            "FIX 下单助手 %s\n\n" % version_text() +
             "由原 fix-test 命令行脚本改写的图形界面版本：\n"
             "· 连接参数全部可视化配置（等同 client.cfg）\n"
             "· 下单字段全部下拉选择，支持自定义字典\n"

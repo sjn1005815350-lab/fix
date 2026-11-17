@@ -3,6 +3,7 @@
 
 产物：dist/FIX-Order-Desk.exe（约 11 MB，双击即可运行，无需安装 Python）
 """
+import io
 import os
 import shutil
 import subprocess
@@ -12,7 +13,23 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
 
+def stamp_version():
+    """把当前时间写进 fixgui/version.py 的 BUILD_TIME，打包进 exe。"""
+    import datetime
+    import re
+    path = os.path.join(ROOT, "fixgui", "version.py")
+    with io.open(path, encoding="utf-8") as fh:
+        text = fh.read()
+    now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+    text = re.sub(r'BUILD_TIME = ".*?"', 'BUILD_TIME = "%s"' % now, text, count=1)
+    with io.open(path, "w", encoding="utf-8", newline="") as fh:
+        fh.write(text)
+    print("构建时间：%s" % now)
+    return now
+
+
 def main():
+    stamp_version()
     for folder in ("build", "dist"):
         shutil.rmtree(os.path.join(ROOT, folder), ignore_errors=True)
 

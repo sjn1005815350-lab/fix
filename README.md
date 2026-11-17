@@ -10,6 +10,8 @@
 - 程序没有做代码签名，Windows 可能提示“未知发布者”，点「更多信息 → 仍要运行」即可；
   若杀毒软件误报，加入信任或白名单。
 - 建议把 exe 放在**不含中文**的目录（例如 `D:\FIX`），路径含中文时 QuickFIX 可能读不到配置。
+- 文件校验（SHA256）：`5D0BC8DF7601485B41B6AE74D6B12FAB3A473F63982AA92082039B2568414B57`
+  下载后可执行 `certutil -hashfile FIX-Order-Desk.exe SHA256` 核对。
 - 历史版本和更新记录见 [Releases](https://github.com/sjn1005815350-lab/fix/releases)。
 
 把 `D:\fix-test含查询\fix-test` 里的命令行脚本（`test.py` / `main.py` / `fix_client.py` /

@@ -1,0 +1,78 @@
+<h1>FIX 下单助手 · 下载与使用说明</h1>
+<p>Windows 桌面客户端，用于 FIX 协议下单、撤单和成交回报查看。免安装、单文件，连接参数全部界面可配。</p>
+
+<h2>一、下载</h2>
+<p><strong><a href="https://sjn1005815350-lab.github.io/fix/">➡ 打开下载页（在页面上点「下载」按钮）</a></strong></p>
+<ul>
+  <li>下载页打不开时用直链（国内加速）：<a href="https://gh-proxy.com/https://github.com/sjn1005815350-lab/fix/releases/latest/download/FIX-Order-Desk.exe">FIX-Order-Desk.exe</a></li>
+  <li>GitHub 原版：<a href="https://github.com/sjn1005815350-lab/fix/releases/latest">Releases 页面</a></li>
+</ul>
+<table>
+  <tbody>
+    <tr><th>版本</th><td>v1.0.2（2026-11-17 16:45）</td></tr>
+    <tr><th>文件</th><td>FIX-Order-Desk.exe（约 10.7 MB）</td></tr>
+    <tr><th>运行环境</th><td>Windows 10 / 11 64 位，无需安装 Python</td></tr>
+    <tr><th>SHA256</th><td><code>96F361CB0EBBCAA7F0EB9958E5EFCC9CBA7DC63D6801213DA18FDEEC89BF4D64</code></td></tr>
+  </tbody>
+</table>
+<p>校验方法：<code>certutil -hashfile FIX-Order-Desk.exe SHA256</code></p>
+
+<h2>二、安装与运行</h2>
+<ol>
+  <li>把 exe 放到<strong>不含中文</strong>的目录，例如 <code>D:\FIX</code>（路径含中文时 QuickFIX 可能读不到配置）。</li>
+  <li>双击运行，无需安装 Python 或其他依赖。</li>
+  <li>首次启动会在 exe 同级目录生成 <code>config/</code>、<code>dict/</code>、<code>logs/</code>、<code>store/</code>、<code>runtime/</code>。</li>
+  <li>Windows 提示“未知发布者”时，点「更多信息 → 仍要运行」；若杀毒软件误报，请把 exe 加入信任。</li>
+</ol>
+
+<h2>三、首次配置</h2>
+<ol>
+  <li>打开「连接配置」页。</li>
+  <li>填写服务器地址、端口、SenderCompID、TargetCompID、SenderSubID；版本号、心跳、重连、交易时段、数据字典、序号目录保持默认即可。</li>
+  <li>点「保存」，下次启动自动带出；也可以用「另存为」保存多套档案（例如生产 / UAT）。</li>
+  <li>点「连接交易网关」，顶部状态变成绿色「已登录」后即可下单。</li>
+</ol>
+<p>换网关或账号后如果登录被拒，点「重置序号并重连」。</p>
+
+<h2>四、下单</h2>
+<ul>
+  <li>所有字段都能从下拉里选，也能直接键盘输入；数量、价格聚焦时会自动全选，直接输入即覆盖。</li>
+  <li>选择交易标的会自动带出交易市场。</li>
+  <li>选「市价」会自动清空价格；限价单必须填价格。</li>
+  <li>附加字段用于写非标准 tag，例如 <code>11000=3</code>（融券标志）。</li>
+  <li>「预览报文」可以先看即将发出的 FIX 报文，不会真正发送。</li>
+</ul>
+
+<h2>五、委托列表与回报</h2>
+<ul>
+  <li>右侧「委托列表」每行是一笔委托的<strong>最新状态</strong>，不会把每条成交回报单独列一行。</li>
+  <li><strong>双击某一行</strong>（或右键 →「查看回报明细」）可以看到这笔委托的完整时间线：报单 → 委托回报 → 成交回报 / 撤单请求 / 撤单回报 / 撤单拒绝；点其中任意一条，下方显示对应的原始 FIX 报文。</li>
+  <li><strong>撤单</strong>：在列表里选中一笔进行中的委托 → 点「撤单选中」→ 确认。委托号、代码、方向、账号都取自这一行，不需要手输；「撤单备注」会写进 58 字段。</li>
+</ul>
+
+<h2>六、查询与其他页签</h2>
+<ul>
+  <li><strong>查询</strong>：资金 FD、持仓 AN、额度 SC，结果按应答类型分表，可切到「原始报文」看全文。</li>
+  <li><strong>字段字典</strong>：维护所有下拉选项和附加字段预设，保存后立即生效。</li>
+  <li><strong>运行日志</strong>：所有收发报文、成交回报、错误，可按类别过滤并导出。</li>
+</ul>
+
+<h2>七、常见问题</h2>
+<table>
+  <tbody>
+    <tr><th>现象</th><th>处理</th></tr>
+    <tr><td>下载页/链接打不开</td><td>用上面的国内加速直链；仍不行说明网络策略限制，可找同事拷贝 exe</td></tr>
+    <tr><td>SmartScreen 提示未知发布者</td><td>点「更多信息 → 仍要运行」；程序未做代码签名</td></tr>
+    <tr><td>登录被拒、提示序号错误</td><td>点「重置序号并重连」</td></tr>
+    <tr><td>提示数据字典不存在</td><td>确认 exe 同级有 <code>dict/</code> 目录；首次运行会自动生成</td></tr>
+    <tr><td>价格/数量敲不进字</td><td>先确认窗口在前台；中文输入法可切英文半角，全角数字会自动转半角</td></tr>
+    <tr><td>想确认版本</td><td>看窗口标题或「帮助 → 关于」，显示 <code>v1.0.2（2026-11-17 16:45）</code></td></tr>
+  </tbody>
+</table>
+
+<h2>八、版本记录</h2>
+<ul>
+  <li><strong>v1.0.2</strong>（2026-11-17 16:45）：版本号显示构建时间；改用下载页分发；移除默认登录凭据。</li>
+  <li><strong>v1.0.0</strong>（2026-11-17）：首个发布版本。</li>
+</ul>
+<p>源码与更新记录：<a href="https://github.com/sjn1005815350-lab/fix">github.com/sjn1005815350-lab/fix</a></p>

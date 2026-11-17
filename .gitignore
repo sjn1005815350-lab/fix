@@ -23,3 +23,6 @@ venv/
 *.log
 .DS_Store
 Thumbs.db
+
+# 浏览器调试配置目录（含登录会话，不要提交）
+.cdp-profile/

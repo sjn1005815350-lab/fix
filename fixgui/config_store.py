@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """配置、下拉字典与历史委托的持久化。
 
 所有可配置项都保存在 ``config/`` 目录下的 JSON 文件中，界面启动时读取，
@@ -113,8 +113,6 @@ DEFAULT_OPTIONS = {
     "qty": ["100", "200", "300", "500", "1000"],
     "price": ["", "10.10", "12.30", "21.00"],
     "currency": ["CNY", "USD", "HKD"],
-    "username": ["bGxwcmFj"],
-    "password": ["FV3BlvgKjsypmGV0I98BZA=="],
     "cancel_text": ["", "撤单"],
     # 附加字段预设，形如 "11000=3"
     "__extra__": ["11000=3", "921=NONE"],

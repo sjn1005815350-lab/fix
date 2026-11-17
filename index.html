@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FIX 下单助手 · 下载</title>
+<style>
+  :root {
+    --navy: #132a4a;
+    --blue: #1677ff;
+    --blue-dark: #0b5fd0;
+    --bg: #f3f5f9;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --line: #e3e8ef;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Microsoft YaHei UI", "Microsoft YaHei", -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.7;
+  }
+  .hero {
+    background: var(--navy);
+    color: #fff;
+    padding: 34px 20px 30px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { width: 56px; height: 56px; border-radius: 12px; }
+  .brand h1 { margin: 0; font-size: 26px; letter-spacing: .5px; }
+  .brand p { margin: 2px 0 0; color: #9fb4d0; font-size: 14px; }
+  main { max-width: 860px; margin: -18px auto 60px; padding: 0 20px; }
+  .card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 26px 26px 22px;
+    box-shadow: 0 8px 28px rgba(19, 42, 74, .08);
+  }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+  .tag {
+    background: #eef4ff; color: #1d4ed8;
+    border-radius: 999px; padding: 3px 12px; font-size: 13px;
+  }
+  .tag.gray { background: #f1f3f6; color: var(--muted); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--blue); color: #fff; text-decoration: none;
+    font-size: 18px; font-weight: 700;
+    padding: 14px 30px; border-radius: 10px;
+    transition: background .15s;
+  }
+  .btn:hover { background: var(--blue-dark); }
+  .btn svg { width: 20px; height: 20px; }
+  .sub { margin-top: 10px; font-size: 13px; color: var(--muted); }
+  .sub a { color: #2563eb; text-decoration: none; }
+  .hash {
+    margin-top: 18px; padding: 12px 14px;
+    background: #f8fafc; border: 1px dashed var(--line); border-radius: 10px;
+    font-family: Consolas, monospace; font-size: 12px; color: #475569;
+    word-break: break-all;
+  }
+  h2 { font-size: 17px; margin: 34px 0 12px; }
+  ol { margin: 0; padding-left: 22px; }
+  ol li { margin: 6px 0; }
+  .shot {
+    width: 100%; border: 1px solid var(--line); border-radius: 12px;
+    margin-top: 14px; display: block;
+  }
+  .note {
+    margin-top: 22px; padding: 14px 16px;
+    background: #fff8e6; border: 1px solid #f3dfa8; border-radius: 10px;
+    font-size: 14px; color: #7a5b00;
+  }
+  .note b { color: #5c4300; }
+  footer {
+    text-align: center; color: var(--muted); font-size: 13px;
+    padding: 0 20px 40px;
+  }
+  footer a { color: #2563eb; text-decoration: none; }
+  @media (max-width: 560px) {
+    .card { padding: 20px 16px; }
+    .btn { width: 100%; justify-content: center; font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap brand">
+    <img src="assets/app.png" alt="FIX 下单助手">
+    <div>
+      <h1>FIX 下单助手</h1>
+      <p>Windows 桌面客户端 · 免安装 · 连接参数可视化配置</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <div class="meta">
+      <span class="tag">版本 v1.0.0</span>
+      <span class="tag gray">Windows 10 / 11 · 64 位</span>
+      <span class="tag gray">单文件 · 约 10.7 MB</span>
+      <span class="tag gray">无需安装 Python</span>
+    </div>
+
+    <a class="btn"
+       href="https://gh-proxy.com/https://github.com/sjn1005815350-lab/fix/releases/download/v1.0.0/FIX-Order-Desk.exe">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      下载 FIX-Order-Desk.exe
+    </a>
+
+    <div class="sub">
+      国内加速链接；若无法下载，可尝试
+      <a href="https://github.com/sjn1005815350-lab/fix/releases/latest/download/FIX-Order-Desk.exe">GitHub 原版地址</a>
+      （需能直连 GitHub 下载域名）。
+    </div>
+
+    <div class="hash">
+      SHA256：3B129CD54F89A030E32A228908137198D21A431B3796ABBEF672C0BE2327932C<br>
+      下载后可执行 <b>certutil -hashfile FIX-Order-Desk.exe SHA256</b> 核对
+    </div>
+  </section>
+
+  <h2>使用步骤</h2>
+  <ol>
+    <li>下载 <b>FIX-Order-Desk.exe</b>，放到一个<b>不含中文</b>的目录（例如 <code>D:\FIX</code>）。</li>
+    <li>双击运行。首次启动会在 exe 同级目录生成 <code>config/</code>、<code>dict/</code>、<code>logs/</code>、<code>store/</code>、<code>runtime/</code>。</li>
+    <li>打开「连接配置」，填写网关地址、端口、SenderCompID / TargetCompID / SenderSubID，点「保存」。</li>
+    <li>点「连接交易网关」，顶部状态变绿「已登录」后即可在「交易」页下单、撤单、查看回报。</li>
+  </ol>
+
+  <img class="shot" src="docs/screenshot-order.png" alt="交易页">
+
+  <div class="note">
+    <b>提示：</b>程序未做代码签名，Windows 可能提示“未知发布者”，点「更多信息 → 仍要运行」即可；
+    如果杀毒软件误报，请把 exe 加入信任。
+  </div>
+
+  <h2>功能</h2>
+  <ol>
+    <li>连接参数全部可视化配置，可保存多套档案（生产 / UAT）。</li>
+    <li>下单字段下拉选择，也可直接输入；数量、价格支持全角数字自动转半角。</li>
+    <li>委托列表每行一笔委托的最新状态；双击/右键查看这笔委托的完整回报时间线（报单、成交、撤单，含原始报文）。</li>
+    <li>选中委托即可撤单，无需手输委托号。</li>
+    <li>资金 / 持仓 / 额度查询结果按应答类型分表。</li>
+    <li>运行日志可过滤、可导出。</li>
+  </ol>
+</main>
+
+<footer>
+  源码与更新记录：<a href="https://github.com/sjn1005815350-lab/fix">github.com/sjn1005815350-lab/fix</a>
+</footer>
+
+</body>
+</html>

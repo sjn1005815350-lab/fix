@@ -1,4 +1,4 @@
-# 运行期生成的数据（含账号、会话序号、日志），不要提交
+﻿# 运行期生成的数据（含账号、会话序号、日志），不要提交
 config/
 store/
 logs/
@@ -8,6 +8,8 @@ runtime/
 build/
 dist/
 *.spec
+!download/
+!download/FIX-Order-Desk.exe
 _exetest/
 
 # Python

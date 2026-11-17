@@ -1,14 +1,14 @@
-﻿# FIX 下单助手（图形界面版）
+# FIX 下单助手（图形界面版）
 
 ## ⬇ 下载（Windows，免安装）
 
-**国内加速下载：[点击下载 FIX-Order-Desk.exe](https://gh-proxy.com/https://github.com/sjn1005815350-lab/fix/releases/download/v1.0.0/FIX-Order-Desk.exe)** （约 10.7 MB）
+**下载页（点开页面，再点按钮下载）：<https://sjn1005815350-lab.github.io/fix/>**
 
-> 国内网络直连 GitHub 的下载域名（`objects.githubusercontent.com`）经常被重置，所以主链接走 gh-proxy 加速；
+如果打不开下载页，可以直接点国内加速链接：
+<https://gh-proxy.com/https://github.com/sjn1005815350-lab/fix/releases/download/v1.0.0/FIX-Order-Desk.exe>
+
+> GitHub 自带的下载域名（`objects.githubusercontent.com`）在国内常被重置，所以下载页里的按钮走 gh-proxy 加速；
 > 能直连 GitHub 时也可以用原版：[GitHub Releases](https://github.com/sjn1005815350-lab/fix/releases/latest/download/FIX-Order-Desk.exe)。
-
-备用地址（jsDelivr 的 `.exe` 会被拒，这里放仓库内的原文件，需能访问 GitHub raw 时用）：
-`https://github.com/sjn1005815350-lab/fix/raw/main/download/FIX-Order-Desk.exe`
 
 - 双击即可运行，不需要安装 Python，也不需要命令行。
 - 首次运行会在 exe 同级目录生成 `config/`（配置）、`dict/`（FIX 字典）、`logs/`、`store/`、`runtime/`，
